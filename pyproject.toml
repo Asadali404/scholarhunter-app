@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scholarhunter"
+version = "0.1.0"
+description = "Free-text scholarship matcher (stdlib core, offline demo fallback)."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "ScholarHunter Contributors" }]
+keywords = ["scholarships", "matching", "llm", "groq", "streamlit"]
+# The core pipeline is dependency-free. `pipx install .` / `pip install .` works
+# with nothing else required.
+dependencies = []
+
+[project.optional-dependencies]
+app = ["streamlit>=1.35,<2.0"]
+
+[project.scripts]
+scholarhunter = "scholarhunter.__main__:main"
+
+[tool.setuptools]
+packages = ["scholarhunter"]
+
+[tool.setuptools.package-data]
+scholarhunter = ["data/*.json"]

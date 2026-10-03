@@ -1,0 +1,4 @@
+# Web UI (Streamlit Cloud only builds/installs this).
+# The scholarhunter package itself is stdlib-only and has no hard dependencies,
+# so the core pipeline runs with nothing installed.
+streamlit>=1.35,<2.0
